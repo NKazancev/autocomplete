@@ -13,15 +13,15 @@ export function createLayout() {
     input.setAttribute('name', 'search-repository');
     input.setAttribute('placeholder', 'search repository');
 
-    const searchedRepos = document.createElement('div');
-    searchedRepos.classList.add('searched-repos');
+    const autocomplete = document.createElement('div');
+    autocomplete.classList.add('autocomplete');
     
     const addedRepos = document.createElement('div');
     addedRepos.classList.add('added-repos');
     const addedReposList = document.createElement('ul');
     addedReposList.classList.add('added-repos__list');
 
-    form.append(input, searchedRepos);
+    form.append(input, autocomplete);
     addedRepos.append(addedReposList);
     container.append(form, addedRepos);
     app.append(container);

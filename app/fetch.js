@@ -15,11 +15,11 @@ async function getData(input, container) {
         }
 
         const ul = document.createElement('ul');
-        ul.classList.add('searched-repos__list');
+        ul.classList.add('autocomplete__list');
         
         for (let item of repos) {
             const li = document.createElement('li');
-            li.classList.add('searched-repos__item');
+            li.classList.add('autocomplete__item');
             li.textContent = item.full_name;
             ul.append(li);
             container.innerHTML = '';

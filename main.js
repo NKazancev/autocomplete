@@ -6,16 +6,16 @@ import { createRepoItem } from './app/layout.js';
 createLayout();
 
 const input = document.querySelector('.app__input');
-const searchedRepos = document.querySelector('.searched-repos');
+const autocomplete = document.querySelector('.autocomplete');
 const addedRepos = document.querySelector('.added-repos__list');
 
 input.addEventListener('input', function() {
-    searchedRepos.classList.remove('visible');
-    searchedRepos.innerHTML = '';
-    getRepos(input, searchedRepos);
+    autocomplete.classList.remove('visible');
+    autocomplete.innerHTML = '';
+    getRepos(input, autocomplete);
 });
 
-searchedRepos.addEventListener('click', function(e) {
+autocomplete.addEventListener('click', function(e) {
     const repo = repos.find(item => item.full_name === e.target.textContent);
     createRepoItem(repo, addedRepos);
     this.classList.remove('visible');
@@ -29,6 +29,6 @@ addedRepos.addEventListener('click', function(e) {
 });
 
 window.addEventListener('click', function() {
-    searchedRepos.classList.remove('visible');
-    searchedRepos.innerHTML = '';
+    autocomplete.classList.remove('visible');
+    autocomplete.innerHTML = '';
 });
